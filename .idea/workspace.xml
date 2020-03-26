@@ -1,7 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dccc6b44-5f94-40f9-ac75-b19d50c2d570" name="Default Changelist" comment="" />
+    <list default="true" id="dccc6b44-5f94-40f9-ac75-b19d50c2d570" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/k8s.io/client-go/pkg/apis/clientauthentication/v1beta1/zz_generated.conversion.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/pkg/apis/clientauthentication/v1beta1/zz_generated.conversion.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/k8s.io/client-go/pkg/version/def.bzl" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/pkg/version/def.bzl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/k8s.io/client-go/plugin/pkg/client/auth/exec/exec.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/plugin/pkg/client/auth/exec/exec.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/k8s.io/client-go/rest/OWNERS" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/rest/OWNERS" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/k8s.io/client-go/rest/client.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/rest/client.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/k8s.io/client-go/rest/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/rest/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/k8s.io/client-go/rest/plugin.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/rest/plugin.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/k8s.io/client-go/rest/request.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/rest/request.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/k8s.io/client-go/rest/transport.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/rest/transport.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/k8s.io/client-go/rest/watch/decoder.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/rest/watch/decoder.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/k8s.io/client-go/rest/zz_generated.deepcopy.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/rest/zz_generated.deepcopy.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/auth/clientauth.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/auth/clientauth.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/api/types.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/api/types.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/api/v1/conversion.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/api/v1/conversion.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/api/v1/doc.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/api/v1/doc.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/api/v1/register.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/api/v1/register.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/api/v1/types.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/api/v1/types.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/client_config.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/client_config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/loader.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/loader.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/validation.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/validation.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/metrics/OWNERS" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/metrics/OWNERS" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/k8s.io/client-go/transport/cache.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/transport/cache.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/k8s.io/client-go/transport/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/transport/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/k8s.io/client-go/transport/round_trippers.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/transport/round_trippers.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/k8s.io/client-go/transport/token_source.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/transport/token_source.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/k8s.io/client-go/transport/transport.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/transport/transport.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/k8s.io/client-go/util/cert/io.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/util/cert/io.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/k8s.io/client-go/util/cert/pem.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/util/cert/pem.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/k8s.io/client-go/util/flowcontrol/backoff.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/util/flowcontrol/backoff.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/k8s.io/client-go/util/flowcontrol/throttle.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/util/flowcontrol/throttle.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/k8s.io/client-go/util/homedir/homedir.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/util/homedir/homedir.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/k8s.io/client-go/util/jsonpath/jsonpath.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/util/jsonpath/jsonpath.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/k8s.io/client-go/util/jsonpath/parser.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/util/jsonpath/parser.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/modules.txt" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/modules.txt" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -9,19 +48,25 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="GOROOT" path="$PROJECT_DIR$/../../go1.14" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1ZeTY4BQm8k8Va7OnNW0pfr8UGU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="go.vendoring.notification.had.been.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../github.com/tektoncd/pipeline" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -66,5 +111,18 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
