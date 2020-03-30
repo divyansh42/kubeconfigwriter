@@ -1,23 +1,25 @@
-FROM golang
+FROM golang:1.14-alpine AS builder
 
-ENV GO111MODULE=on
+#ENV GO111MODULE=on
+#ENV GOPATH /go
+#ENV PATH /go/bin:$PATH
 
-ENV GOPATH /go
-ENV PATH /go/bin:$PATH
-
-RUN mkdir -p ${GOPATH}/src ${GOPATH}/bin
+RUN mkdir -p go/src $ go/bin
 
 WORKDIR /go/src/kubeconfigwriter
 
 COPY go.mod .
-COPY go.sum .
 
 RUN go mod download
 
-RUN mkdir -p ${GOPATH}/src ${GOPATH}/bin
-
 COPY . .
+RUN  go build -o /go/bin/kubeconfigwriter .
 
-RUN  go build -o /go/bin/kubeconfigwriter /go/src/kubeconfigwriter
+FROM alpine:3.9
 
-ENTRYPOINT ["/go/bin/kubeconfigwriter"]
+RUN apk add ca-certificates
+
+COPY --from=builder /go/bin/kubeconfigwriter .
+
+ENTRYPOINT ["./kubeconfigwriter"]
+# CMD ["/bin/bash"]

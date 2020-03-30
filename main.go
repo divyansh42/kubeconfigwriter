@@ -68,14 +68,21 @@ var (
 )
 
 func main() {
+
+	//clusterConfig = "{"name":"test-cluster-resource","type":"cluster","url":"http://10.10.10.10","revision":"","username":"","password":"","namespace":"","token":"","Insecure":false,"cadata":null,"secrets":[{"fieldName":"cadata","secretKey":"cadatakey","secretName":"secret1"}]}"
 	flag.Parse()
+	//fmt.Println("-------------------------")
+	//fmt.Println(*clusterConfig)
 
 	logger, _ := logging.NewLogger("", "kubeconfig")
 	defer func() {
 		_ = logger.Sync()
 	}()
+	//fmt.Println(*clusterConfig)
 
 	cr := Resource{}
+	//cr1 := Resource{"test-cluster-resource", "cluster", "http", "", "", "", "", "",false,"cadata",[{"cadata", "cadatakey", "secret1"}], ""}
+
 	err := json.Unmarshal([]byte(*clusterConfig), &cr)
 	if err != nil {
 		logger.Fatalf("Error reading cluster config: %v", err)
@@ -126,6 +133,8 @@ func createKubeconfigFile(resource *Resource, logger *zap.SugaredLogger) {
 	c.CurrentContext = resource.Name
 	c.APIVersion = "v1"
 	c.Kind = "Config"
+
+	//fmt.Println(resource.Name)
 
 	destinationFile := fmt.Sprintf("/workspace/%s/kubeconfig", resource.Name)
 	if err := clientcmd.WriteToFile(*c, destinationFile); err != nil {

@@ -138,8 +138,7 @@ k8s.io/client-go/util/keyutil
 k8s.io/klog
 # k8s.io/utils v0.0.0-20191114184206-e782cd3c129f
 k8s.io/utils/integer
-# knative.dev/pkg v0.0.0-20200325183451-8a6d25b30970
-## explicit
+# knative.dev/pkg v0.0.0-20191111150521-6d806b998379
 knative.dev/pkg/changeset
 knative.dev/pkg/logging
 knative.dev/pkg/logging/logkey
