@@ -69,7 +69,8 @@ type Resource struct {
 }
 
 var (
-	clusterConfig = flag.String("clusterConfig", "", "json string with the configuration of a cluster based on values from a cluster resource. Only required for external clusters.")
+	clusterConfig  = flag.String("clusterConfig", "", "json string with the configuration of a cluster based on values from a cluster resource. Only required for external clusters.")
+	destinationDir = flag.String("destinationDir", "", "destination directory where generated kubeconfig file will be stored.")
 )
 
 func main() {
@@ -88,10 +89,10 @@ func main() {
 	if err != nil {
 		logger.Fatalf("Error reading cluster config: %v", err)
 	}
-	createKubeconfigFile(&cr, logger)
+	createKubeconfigFile(&cr, logger, destinationDir)
 }
 
-func createKubeconfigFile(resource *Resource, logger *zap.SugaredLogger) {
+func createKubeconfigFile(resource *Resource, logger *zap.SugaredLogger, destinationDir *string) {
 	cluster := &clientcmdapi.Cluster{
 		Server:                   resource.URL,
 		InsecureSkipTLSVerify:    resource.Insecure,
@@ -141,7 +142,7 @@ func createKubeconfigFile(resource *Resource, logger *zap.SugaredLogger) {
 	c.Kind = "Config"
 
 
-	destinationFile := fmt.Sprintf("/workspace/%s/kubeconfig", resource.Name)
+	destinationFile := fmt.Sprintf("%s/kubeconfig", *destinationDir)
 	if err := clientcmd.WriteToFile(*c, destinationFile); err != nil {
 		logger.Fatalf("Error writing kubeconfig to file: %v", err)
 	}
