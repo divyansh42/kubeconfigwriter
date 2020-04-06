@@ -57,6 +57,11 @@ type Resource struct {
 	// CAData holds PEM-encoded bytes (typically read from a root certificates bundle).
 	// CAData takes precedence over CAFile
 	CAData []byte `json:"cadata"`
+
+	ClientKeyData []byte `json:"clientKeyData"`
+
+	ClientCertificateData []byte `json:"clientCertificateData"`
+
 	//Secrets holds a struct to indicate a field name and corresponding secret name to populate it
 	Secrets []SecretParam `json:"secrets"`
 
@@ -64,33 +69,30 @@ type Resource struct {
 }
 
 var (
-	clusterConfig = flag.String("clusterConfig", "", "json string with the configuration of a cluster based on values from a cluster resource. Only required for external clusters.")
+	clusterConfig  = flag.String("clusterConfig", "", "json string with the configuration of a cluster based on values from a cluster resource. Only required for external clusters.")
+	destinationDir = flag.String("destinationDir", "", "destination directory where generated kubeconfig file will be stored.")
 )
 
 func main() {
 
-	//clusterConfig = "{"name":"test-cluster-resource","type":"cluster","url":"http://10.10.10.10","revision":"","username":"","password":"","namespace":"","token":"","Insecure":false,"cadata":null,"secrets":[{"fieldName":"cadata","secretKey":"cadatakey","secretName":"secret1"}]}"
+
 	flag.Parse()
-	//fmt.Println("-------------------------")
-	//fmt.Println(*clusterConfig)
 
 	logger, _ := logging.NewLogger("", "kubeconfig")
 	defer func() {
 		_ = logger.Sync()
 	}()
-	//fmt.Println(*clusterConfig)
 
 	cr := Resource{}
-	//cr1 := Resource{"test-cluster-resource", "cluster", "http", "", "", "", "", "",false,"cadata",[{"cadata", "cadatakey", "secret1"}], ""}
 
 	err := json.Unmarshal([]byte(*clusterConfig), &cr)
 	if err != nil {
 		logger.Fatalf("Error reading cluster config: %v", err)
 	}
-	createKubeconfigFile(&cr, logger)
+	createKubeconfigFile(&cr, logger, destinationDir)
 }
 
-func createKubeconfigFile(resource *Resource, logger *zap.SugaredLogger) {
+func createKubeconfigFile(resource *Resource, logger *zap.SugaredLogger, destinationDir *string) {
 	cluster := &clientcmdapi.Cluster{
 		Server:                   resource.URL,
 		InsecureSkipTLSVerify:    resource.Insecure,
@@ -111,6 +113,9 @@ func createKubeconfigFile(resource *Resource, logger *zap.SugaredLogger) {
 	//only one authentication technique per user is allowed in a kubeconfig, so clear out the password if a token is provided
 	user := resource.Username
 	pass := resource.Password
+	clientKeyData := resource.ClientKeyData
+	clientCertificateData := resource.ClientCertificateData
+
 	if resource.Token != "" {
 		user = ""
 		pass = ""
@@ -119,6 +124,8 @@ func createKubeconfigFile(resource *Resource, logger *zap.SugaredLogger) {
 		Token:    resource.Token,
 		Username: user,
 		Password: pass,
+		ClientKeyData: clientKeyData,
+		ClientCertificateData: clientCertificateData,
 	}
 	context := &clientcmdapi.Context{
 		Cluster:  resource.Name,
@@ -134,9 +141,8 @@ func createKubeconfigFile(resource *Resource, logger *zap.SugaredLogger) {
 	c.APIVersion = "v1"
 	c.Kind = "Config"
 
-	//fmt.Println(resource.Name)
 
-	destinationFile := fmt.Sprintf("/workspace/%s/kubeconfig", resource.Name)
+	destinationFile := fmt.Sprintf("%s/kubeconfig", *destinationDir)
 	if err := clientcmd.WriteToFile(*c, destinationFile); err != nil {
 		logger.Fatalf("Error writing kubeconfig to file: %v", err)
 	}
