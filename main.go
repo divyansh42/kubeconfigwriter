@@ -58,9 +58,9 @@ type Resource struct {
 	// CAData takes precedence over CAFile
 	CAData []byte `json:"cadata"`
 
-	ClientKeyData []byte `json:"clientkeydata"`
+	ClientKeyData []byte `json:"clientKeyData"`
 
-	ClientCertificateData []byte `json:"clientcertificatedata"`
+	ClientCertificateData []byte `json:"clientCertificateData"`
 
 	//Secrets holds a struct to indicate a field name and corresponding secret name to populate it
 	Secrets []SecretParam `json:"secrets"`
